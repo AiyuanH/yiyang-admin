@@ -1,0 +1,27 @@
+server:
+  # 配置服务器的端口号
+  port: 9090
+spring:
+  # 项目中有多个配置文件的时候，可以通过配置文件来指定哪个文件生效
+  profiles:
+    active: dev
+  # 数据库连接相关的配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/yiyang2?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  # 配置项目访问的根目录
+  mvc:
+    servlet:
+      path: /
+mybatis-plus:
+  configuration:
+    # mybatisplus实现日志，然后在项目执行的过程中，可以查阅对应的sql相关的语句
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 日志级别
+logging:
+  level:
+    root: info
